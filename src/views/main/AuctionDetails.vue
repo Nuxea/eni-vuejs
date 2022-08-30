@@ -16,13 +16,12 @@
                     <v-col cols="9">
                       <h2><strong>{{ auction.name }}</strong></h2>
 
-                      <small class="pl-5">Crée le : {{ new Date(auction.createTime).toLocaleDateString() }}</small>
-                      <small class="pl-5">Se termine le : {{ new Date(auction.endTime).toLocaleDateString() }}</small>
+                      <small class="pl-5">Se termine le : {{ new Date(auction.endTime).toLocaleString() }}</small>
 
 
                     </v-col>
                     <v-col cols="3">
-                      <v-chip color="purple" class="mt-7 px-9 text-right">{{ user.username }}</v-chip>
+                      <v-chip color="deep-purple" class="mt-7 px-9 text-right">{{ user.username }}</v-chip>
                     </v-col>
                     <v-col cols="12">
                       <p>{{ auction.description }}</p>
@@ -60,7 +59,7 @@
                                     class="px-10"
                                     block="true"
                                     x-large
-                                    color="error"
+                                    color="deep-purple"
                                     @click="requestBid"
                                   >
                                     Enchérir
@@ -116,30 +115,70 @@
                     <v-tabs
                       v-model="tab"
                       fixed-tabs=""
-                      background-color="error"
+                      background-color="deep-purple"
                     >
-                      <v-tab value="one">Description</v-tab>
-                      <v-tab value="two">Enchérissement</v-tab>
-                      <!--                    <v-tab value="three">Item Three</v-tab>-->
+                      <v-tab value="desc">Description</v-tab>
+                      <v-tab value="deta">Détails</v-tab>
+                      <v-tab value="hist">Historique d'enchérissement</v-tab>
+
                     </v-tabs>
 
                     <v-card-text>
                       <v-window v-model="tab">
-                        <v-window-item value="one">
+                        <v-window-item value="desc">
                           {{ auction.description }}
                         </v-window-item>
 
-                        <v-window-item value="two">
-                          <li>Un a enchéri</li>
-                          <li>Deux a enchéri</li>
-                          <li>Trois a enchéri</li>
-                          <li>Quatre a enchéri</li>
-                          <li>Cinq a enchéri</li>
+                        <v-window-item value="deta">
+                          <v-row>
+                            <v-col cols="6">
+                              <ul>
+                                <li><small>Intitulé de l'enchère </small>:</li>
+                                <li><small>Créateur :</small></li>
+                                <li><small>Date de création :</small></li>
+                                <li><small>Date de fin :</small></li>
+                                <li><small>Catégorie :</small></li>
+                                <li><small>Mise :</small></li>
+                              </ul>
+                            </v-col>
+                            <v-col cols="6">
+                              <ul class="text-right">
+                                <li><strong>{{ auction.name }}</strong></li>
+                                <li><strong>{{ user.username }}</strong></li>
+                                <li><strong>{{ new Date(auction.createTime).toLocaleString() }}</strong></li>
+                                <li><strong>{{ new Date(auction.endTime).toLocaleString() }}</strong></li>
+                                <li><strong>{{ auctionType.name }}</strong></li>
+                                <li><strong>{{ auction.price }} crédit</strong></li>
+                              </ul>
+                            </v-col>
+                          </v-row>
                         </v-window-item>
 
-                        <!--                      <v-window-item value="three">-->
-                        <!--                        Three-->
-                        <!--                      </v-window-item>-->
+                        <v-window-item value="hist">
+                          <v-row>
+                            <v-col cols="6">
+                              <ul>
+                                <li><small>Un a enchéri</small></li>
+                                <li><small>Deux a enchéri</small></li>
+                                <li><small>Trois a enchéri</small></li>
+                                <li><small>Quatre a enchéri</small></li>
+                                <li><small>Cinq a enchéri</small></li>
+                              </ul>
+                            </v-col>
+                            <v-col cols="6">
+                              <ul class="text-right">
+                                <li><strong>1 Crédit</strong></li>
+                                <li><strong>2 Crédits</strong></li>
+                                <li><strong>5 Crédits</strong></li>
+                                <li><strong>3 Crédits</strong></li>
+                                <li><strong>7 Crédits</strong></li>
+                              </ul>
+                            </v-col>
+                          </v-row>
+
+                        </v-window-item>
+
+
                       </v-window>
                     </v-card-text>
                   </v-card>
@@ -215,4 +254,11 @@ export default {
 </script>
 
 <style scoped>
+.v-card-text {
+  background-color: #111218;
+}
+
+ul {
+  list-style-type: none;
+}
 </style>
