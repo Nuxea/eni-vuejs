@@ -34,7 +34,7 @@
             </v-col>
             <v-col lg="5">
               <div class="pa-7 pa-sm-12">
-                <img src="/src/assets/images/logos/dark-logo-icon.svg"  alt=""/>
+                <img src="/src/assets/images/logos/white-logo-icon.svg"  alt=""/>
                 <h2 class="font-weight-bold mt-4 text--darken-2">Se Connecter</h2>
                 <h6 class="text-subtitle-1 mb-7">
                   Vous n'avez pas de compte ?
