@@ -110,37 +110,41 @@
                 </v-col>
               </v-row>
               <v-row class="ma-5">
-                <v-card>
-                  <v-tabs
-                    v-model="tab"
-                    fixed-tabs=""
-                    background-color="alert"
-                  >
-                    <v-tab value="one">Description</v-tab>
-                    <v-tab value="two">Enchérissement</v-tab>
-<!--                    <v-tab value="three">Item Three</v-tab>-->
-                  </v-tabs>
+                <v-col cols="6"></v-col>
+                <v-col cols="6">
+                  <v-card>
+                    <v-tabs
+                      v-model="tab"
+                      fixed-tabs=""
+                      background-color="error"
+                    >
+                      <v-tab value="one">Description</v-tab>
+                      <v-tab value="two">Enchérissement</v-tab>
+                      <!--                    <v-tab value="three">Item Three</v-tab>-->
+                    </v-tabs>
 
-                  <v-card-text>
-                    <v-window v-model="tab">
-                      <v-window-item value="one">
-                        {{ auction.description }}
-                      </v-window-item>
+                    <v-card-text>
+                      <v-window v-model="tab">
+                        <v-window-item value="one">
+                          {{ auction.description }}
+                        </v-window-item>
 
-                      <v-window-item value="two">
-                        <li>Un a enchéri</li>
-                        <li>Deux a enchéri</li>
-                        <li>Trois a enchéri</li>
-                        <li>Quatre a enchéri</li>
-                        <li>Cinq a enchéri</li>
-                      </v-window-item>
+                        <v-window-item value="two">
+                          <li>Un a enchéri</li>
+                          <li>Deux a enchéri</li>
+                          <li>Trois a enchéri</li>
+                          <li>Quatre a enchéri</li>
+                          <li>Cinq a enchéri</li>
+                        </v-window-item>
 
-<!--                      <v-window-item value="three">-->
-<!--                        Three-->
-<!--                      </v-window-item>-->
-                    </v-window>
-                  </v-card-text>
-                </v-card>
+                        <!--                      <v-window-item value="three">-->
+                        <!--                        Three-->
+                        <!--                      </v-window-item>-->
+                      </v-window>
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+
               </v-row>
             </v-card>
           </v-container>
