@@ -57,7 +57,7 @@
             </perfect-scrollbar>
           </v-list>
       <!-- -------------------------------------------------------------------------------------
-              Edit Task Drawer
+              Edit Current User Drawer
       --------------------------------------------------------------------------------------->
       <v-navigation-drawer
         v-model="editUserDial"
@@ -72,9 +72,7 @@
             <v-icon size="small">mdi-window-close</v-icon>
           </v-btn>
         </v-toolbar>
-        <!-- -------------------------------------------------------------------------------------
-              Todo edit
-      --------------------------------------------------------------------------------------->
+
         <v-list class="pa-2">
           <v-list-item-content v-if="selectedUser" class="pt-0">
             <v-list-item-title>
