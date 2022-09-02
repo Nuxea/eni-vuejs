@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import { useCustomizerStore } from "@/stores/customizer";
 import sidebarItems from "./sidebarItem";
 import { useStore } from "vuex";
@@ -16,11 +16,11 @@ const { currentUser } = store.getters;
     :permanent="$vuetify.display.mdAndUp"
     v-model="customizer.Sidebar_drawer"
     elevation="10"
-    rail-width="75"
+    rail-width="100"
     mobile-breakpoint="960"
     app
     :rail="customizer.mini_sidebar"
-    expand-on-hover
+    expand-on-hover=""
   >
     <!-- ---------------------------------------------- -->
     <!---Navigation -->
@@ -36,7 +36,7 @@ const { currentUser } = store.getters;
           <h5>{{ currentUser.username }}</h5>
         </div>
       </div>
-      <v-list class="pa-4" color="transparent">
+      <v-list class="pa-4" color="#fff">
         <!-- ---------------------------------------------- -->
         <!---Menu Loop -->
         <!-- ---------------------------------------------- -->
@@ -104,13 +104,16 @@ const { currentUser } = store.getters;
           <!---Single Item-->
           <!-- ---------------------------------------------- -->
           <v-list-item v-else :key="i" :to="item.to" rounded="lg" class="mb-1">
-            <v-list-item-avatar start class="v-list-item-avatar--start">
-              <vue-feather
-                :type="item.icon"
-                class="feather-sm v-icon v-icon--size-default"
-              ></vue-feather>
-            </v-list-item-avatar>
-            <v-list-item-title v-text="item.title"></v-list-item-title>
+
+            <div class="d-flex">
+              <v-list-item-avatar start class="v-list-item-avatar--start">
+                <vue-feather
+                  :type="item.icon"
+                  class="feather-sm v-icon v-icon--size-default"
+                ></vue-feather>
+              </v-list-item-avatar>
+              <v-list-item-title class="ml-5" v-text="item.title"></v-list-item-title>
+            </div>
           </v-list-item>
           <!-- ---------------------------------------------- -->
           <!---End Single Item-->

@@ -2,8 +2,8 @@ import { createVuetify } from "vuetify";
 import type { ThemeDefinition } from "vuetify";
 
 import "@mdi/font/css/materialdesignicons.css";
-import * as components from "vuetify/components";
-import * as directives from "vuetify/directives";
+import * as components from "vuetify/lib/components/index";
+import * as directives from "vuetify/lib/directives/index";
 
 const Lighttheme: ThemeDefinition = {
   dark: false,

@@ -49,9 +49,9 @@ function logOut() {
     <!-- ---------------------------------------------- -->
     <v-menu v-if="currentUser" anchor="bottom end" origin="auto">
       <template v-slot:activator="{ props }">
-        <v-btn icon v-bind="props">
+        <v-btn icon="" v-bind="props">
           <v-badge color="error" dot>
-            <v-icon>mdi-cart</v-icon>
+            <v-icon color="white">mdi-cart</v-icon>
           </v-badge>
         </v-btn>
       </template>
@@ -70,7 +70,7 @@ function logOut() {
             <v-list-item-avatar start>
               <v-btn
                 icon
-                variant="contained"
+                variant="elevated"
                 elevation="0"
                 class="mr-3"
               >
@@ -79,7 +79,7 @@ function logOut() {
             </v-list-item-avatar>
           </template>
         </v-list-item>
-        <v-btn block variant="contained" color="secondary" class="mt-4 py-4"
+        <v-btn block variant="elevated" color="secondary" class="mt-4 py-4"
         >Voir le panier</v-btn>
       </v-list>
     </v-menu>
@@ -138,7 +138,7 @@ function logOut() {
             <v-list-item-avatar start>
               <v-btn
                 color="primary"
-                variant="contained"
+                variant="elevated"
                 icon="mdi-pencil"
                 elevation="0"
                 size="small"
@@ -159,7 +159,7 @@ function logOut() {
             <v-list-item-avatar start>
               <v-btn
                 color="error"
-                variant="contained"
+                variant="elevated"
                 icon="mdi-account"
                 elevation="0"
                 size="small"
@@ -173,7 +173,7 @@ function logOut() {
           @click="logOut"
           block=""
           color="secondary"
-          variant="contained"
+          variant="elevated"
           class="mt-4 py-4"
           >Déconnexion</v-btn
         >

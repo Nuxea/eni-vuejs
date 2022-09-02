@@ -11,7 +11,7 @@ export const useCustomizerStore = defineStore({
   state: (): State => ({
     Sidebar_drawer: null,
     mini_sidebar: false,
-    navbarColor: "#1e88e5",
+    navbarColor: "#fff",
   }),
 
   getters: {},

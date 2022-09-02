@@ -213,7 +213,7 @@ export default {
 
     const filteredList = computed(() => {
       return creditList.value.filter((credit) => {
-        const full = credit.name || credit.description ;
+        const full = credit.name ;
         return full.toLowerCase().includes(search.value.toLowerCase());
       });
     });

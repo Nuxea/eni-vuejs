@@ -1,8 +1,8 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import App from "./App.vue";
-import router from "./router";
-import vuetify from "./plugins/vuetify";
+import App from "@/App.vue";
+import router from "@/router";
+import vuetify from "@/plugins/vuetify";
 import "@/scss/style.scss";
 import PerfectScrollbar from "vue3-perfect-scrollbar";
 import VueApexCharts from "vue3-apexcharts";
@@ -10,7 +10,7 @@ import VueApexCharts from "vue3-apexcharts";
 import InstantSearch from "vue-instantsearch/vue3/es";
 import VCalendar from "v-calendar";
 import VueFeather from "vue-feather";
-import store from "./stores/index";
+import store from "@/stores/index";
 import BaseBreadcrumb from "@/components/BaseBreadcrumb.vue";
 
 

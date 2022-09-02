@@ -22,9 +22,8 @@
     "vue-router": "^4.0.12",
     "vue3-apexcharts": "^1.4.1",
     "vue3-perfect-scrollbar": "^1.6.0",
-    "vuetify": "^3.0.0-beta.0",
-    "vuex": "^4.0.2",
-    "stripe": "^10.3.0"
+    "vuetify": "^3.0.0-beta.9",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@mdi/font": "^6.5.95",

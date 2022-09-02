@@ -228,8 +228,6 @@
 
 import { computed, onMounted, ref } from "vue";
 import BaseBreadcrumb from "/src/components/BaseBreadcrumb.vue";
-import Credit from "../../models/credit";
-import CreditService from "../../services/credit.service";
 import Auction from "../../models/auction";
 import AuctionService from "../../services/auction.service";
 import AuctionTypeService from "../../services/auctionType.service";
@@ -274,7 +272,7 @@ export default {
 
     const filteredList = computed(() => {
       return auctionList.value.filter((auction) => {
-        const full = auction.name || auction.description ;
+        const full = auction.name ;
         return full.toLowerCase().includes(search.value.toLowerCase());
       });
     });

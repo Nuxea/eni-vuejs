@@ -1,5 +1,14 @@
 <template>
   <v-container id="login" class="fill-height justify-center" tag="section">
+    <v-snackbar
+      v-if="errorMessage"
+      v-model="errorMessage"
+      location="top"
+      :timeout="10000"
+      color="error"
+    >
+      {{ errorMessage }}
+    </v-snackbar>
     <v-row justify="center" class="h-100vh" align="center">
       <v-col lg="11" sm="8" xl="7">
         <v-card elevation="10">
@@ -32,6 +41,7 @@
                 </div>
               </div>
             </v-col>
+
             <v-col lg="5">
               <div class="pa-7 pa-sm-12">
                 <img src="/src/assets/images/logos/white-logo-icon.svg"  alt=""/>
@@ -46,14 +56,14 @@
                 <v-form
                         ref="form"
                         v-model="valid"
-                        lazy-validation
                 >
                   <v-text-field
                     v-model="formData.username"
                     :rules="usernameRules"
                     label="Pseudo"
                     name="username"
-                    class="mt-4"
+                    :counter="15"
+                    class="my-4"
                     required
                     variant="outlined"
                   ></v-text-field>
@@ -62,13 +72,14 @@
                     :rules="passwordRules"
                     label="Mot de Passe"
                     name="password"
+                    class="my-4"
                     required
                     variant="outlined"
                     :append-inner-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                     :type="show1 ? 'text' : 'password'"
                     @click:append-inner="show1 = !show1"
                   ></v-text-field>
-                  <v-btn color="primary" class="py-6" @click="handleLogin"
+                  <v-btn color="primary" @click="handleLogin"
                          :disabled="loading"
                   >Se Connecter</v-btn
                   >
@@ -92,7 +103,8 @@ import UserRole from "../../models/user-role";
 
 export default {
   name: `login`,
-  setup: function () {
+  setup() {
+    let errorMessage = ref(false);
     const show1 = ref(false);
     const valid = ref(true);
     const formData = ref(new User());
@@ -103,19 +115,17 @@ export default {
     const { currentUser } = store.getters;
     const usernameRules = ref([
       v => !!v || "L'identifiant est requis",
-      v => (v && v.length <= 10) || "L'identifiant doit faire moins de 10 caractères",
+      v => v && !!v.trim() || "L'identifiant ne doit pas être vide",
     ]);
     const passwordRules = ref([
       v => !!v || 'Le mot de passe est requis',
-      v => (v && v.length <= 10) || 'Le mot de passe doit faire moins de 10 caractères',
+      v => v && !!v.trim() || "Le mot de passe ne doit pas être vide",
     ]);
 
     onMounted(() => {
       //this.currentUser?.username = this.currentUser != null && this.currentUser.username != null
-      if (currentUser?.role === UserRole.ADMIN) {
-        router.push('/admin');
-      } else if (currentUser?.username){
-        router.push('/');
+      if (currentUser?.username){
+        router.push('/home');
       }
     });
     function handleLogin() {
@@ -127,12 +137,13 @@ export default {
         store.dispatch('updateUser', response.data);
         router.push('/');
       }).catch((err) => {
-        console.log(err);
-      })
-        .then(() => loading.value = false);
+        errorMessage.value = "Votre Identifiant ou votre Mot de Passe est incorrect"
+        // console.log(err);
+      }).then(() => loading.value = false);
     }
 
     return {
+      errorMessage,
       show1,
       valid,
       formData,

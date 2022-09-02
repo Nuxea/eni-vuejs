@@ -4,56 +4,54 @@
       padless
       class="text-white text-center d-flex flex-column"
     >
-      <v-card
-        flat
-        tile
-        class="white--text text-center"
-      >
-        <v-card class="row d-flex pt-4">
-          <v-card class="white--text pt-0 pa-md-4 mx-lg-auto">
-            <v-card-title>Nous contacter</v-card-title>
-            <v-card-text class="text-left">
-              <strong>Adresse</strong>
-              <p class="pl-2">3 Rue Michael Faraday</p>
-              <p class="pl-2">44800 Saint-Herblain</p>
+      <v-container fluid>
+        <v-row class="pt-4">
+          <v-col>
+            <v-card height="325" class="white--text text-left overflow-auto">
+              <v-card-title class="py-10">Résumé</v-card-title>
+              <v-card-text>
+                Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              </v-card-text>
+            </v-card>
+          </v-col>
 
-              <v-divider class="ma-2"></v-divider>
+          <v-col>
+            <v-card class="white--text text-left">
+              <v-card-title class="py-10">Liens Utiles</v-card-title>
+              <v-card-text>
+                <p class="pa-2">
+                  <a href="/auction" class="pa-2 text-white text-decoration-none">Enchères</a>
+                </p>
+                <p class="pa-2">
+                  <a href="/credit" class="pa-2 text-white text-decoration-none">Crédits</a>
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-col>
 
-              <strong>Téléphone</strong>
-              <p class="pl-2">+33 2 28 03 17 28</p>
-            </v-card-text>
-          </v-card>
+          <v-col>
+            <v-card class="white--text text-left">
+              <v-card-title class="py-10">Nous contacter</v-card-title>
+              <v-card-text>
+                <strong>Adresse</strong>
+                <p class="my-5">3 Rue Michael Faraday</p>
+                <p class="my-5">44800 Saint-Herblain</p>
 
-          <v-card height="310" class="white--text pt-0 pa-md-4 mx-lg-auto overflow-auto">
-            <v-card-title>Résumé</v-card-title>
-            <v-card-text>
-              Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            </v-card-text>
-          </v-card>
+                <v-divider class="my-5"></v-divider>
 
-          <v-card class="white--text pt-0 pa-md-4 mx-lg-auto">
-            <v-card-title>Liens Utiles</v-card-title>
-            <v-card-text class="text-left">
-              <p class="pa-2">
-                <a href="#" class="pa-2 text-white text-decoration-none">Enchères</a>
-              </p>
-              <p class="pa-2">
-                <a href="#" class="pa-2 text-white text-decoration-none">Crédits</a>
-              </p>
-            </v-card-text>
-          </v-card>
-
-
-        </v-card>
-
-
+                <strong>Téléphone</strong>
+                <p class="my-5">+33 2 28 03 17 28</p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
 
         <v-divider></v-divider>
 
         <v-card-text class="white--text">
           {{ new Date().getFullYear() }} — <strong>Eni-Enchères</strong>
         </v-card-text>
-      </v-card>
     </v-footer>
 </template>
 

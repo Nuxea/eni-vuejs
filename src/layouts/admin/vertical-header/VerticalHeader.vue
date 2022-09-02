@@ -19,7 +19,7 @@ function logOut() {
 </script>
 
 <template>
-  <v-app-bar theme="dark"
+  <v-app-bar dark
              elevation="5"
              :class="[
                 'v-topbar',
@@ -33,10 +33,12 @@ function logOut() {
       <LogoLight />
     </div>
     <v-app-bar-nav-icon
+      color="white"
       class="hidden-sm-and-down"
       @click.stop="customizer.SET_MINI_SIDEBAR(!customizer.mini_sidebar)"
     />
     <v-app-bar-nav-icon
+      color="white"
       class="hidden-md-and-up"
       @click.stop="customizer.SET_SIDEBAR_DRAWER"
     />
@@ -54,8 +56,8 @@ function logOut() {
           v-bind="props"
           class="pa-0 px-1"
           elevation="0"
-          color="transparent"
-          plain
+          color="#ffffff"
+          variant="plain"
           :ripple="false"
         >
           <v-avatar size="35">
@@ -100,7 +102,7 @@ function logOut() {
             <v-list-item-avatar start>
               <v-btn
                 color="primary"
-                variant="contained"
+                variant="elevated"
                 icon="mdi-home"
                 elevation="0"
                 size="small"
@@ -121,7 +123,7 @@ function logOut() {
             <v-list-item-avatar start>
               <v-btn
                 color="error"
-                variant="contained"
+                variant="elevated"
                 icon="mdi-account"
                 elevation="0"
                 size="small"
@@ -135,7 +137,7 @@ function logOut() {
           @click="logOut"
           block
           color="secondary"
-          variant="contained"
+          variant="elevated"
           class="mt-4 py-4"
           >Déconnexion</v-btn
         >

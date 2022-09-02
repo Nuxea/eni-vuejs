@@ -98,17 +98,6 @@
                               label="Ville"
                             ></v-text-field>
                           </v-col>
-                          <v-col cols="12" sm="6">
-                            <v-text-field
-                              variant="outlined"
-                              hide-details
-                              v-model="selectedUser.password"
-                              label="Mot de Passe"
-                              :append-inner-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                              :type="show1 ? 'text' : 'password'"
-                              @click:append-inner="show1 = !show1"
-                            ></v-text-field>
-                          </v-col>
                         </v-row>
                       </v-form>
                     </v-container>
@@ -276,7 +265,7 @@ export default {
 
     const filteredList = computed(() => {
       return userList.value.filter((user) => {
-        const full = user.firstName || user.lastName || user.username ;
+        const full = user.username ;
         return full.toLowerCase().includes(search.value.toLowerCase());
       });
     });
