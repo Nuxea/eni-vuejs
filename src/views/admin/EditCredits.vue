@@ -20,13 +20,13 @@
             <v-col cols="12" lg="8" md="6" class="text-right">
               <v-dialog v-model="dialog" persistent>
                 <template v-slot:activator="{ props }">
-                  <v-btn color="primary" v-bind="props" class="ml-auto">
+                  <v-btn color="deep-purple" v-bind="props" class="ml-auto">
                     <v-icon class="mr-2">mdi-account-multiple-plus</v-icon>
                     Nouveau Crédit
                   </v-btn>
                 </template>
                 <v-card>
-                  <v-card-title class="pa-4 bg-secondary">
+                  <v-card-title class="pa-4 bg-deep-purple">
                     <span class="title text-white">{{ formTitle }}</span>
                   </v-card-title>
 
@@ -55,6 +55,7 @@
                               variant="outlined"
                               hide-details
                               v-model="selectedCredit.price"
+                              min="1"
                               label="Prix"
                               type="number"
                             ></v-text-field>
@@ -76,9 +77,9 @@
                     <v-spacer></v-spacer>
                     <v-btn color="error" @click="close">Annuler</v-btn>
                     <v-btn
-                      color="secondary"
+                      color="deep-purple"
                       :disabled="selectedCredit.name === '' || selectedCredit.description === '' || selectedCredit.price === ''"
-                      variant="contained"
+                      variant="elevated"
                       @click="save"
                     >Sauvegarder
                     </v-btn
@@ -131,7 +132,7 @@
               <td>
                 <v-icon
                   small
-                  class="mr-2 text-info cursor-pointer"
+                  class="mr-2 text-deep-purple cursor-pointer"
                   @click="editCredit(credit)"
                   title="Modifier"
                 >mdi-pencil
@@ -147,7 +148,7 @@
                     </v-icon>
                   </template>
                   <v-card>
-                    <v-card-title class="pa-4 bg-secondary">
+                    <v-card-title class="pa-4 bg-deep-purple">
                       <span class="title text-white">Supprimer</span>
                     </v-card-title>
 
@@ -159,11 +160,11 @@
 
                     <v-card-actions class="pa-4">
                       <v-spacer></v-spacer>
-                      <v-btn color="secondary" @click="closeDelete">Annuler</v-btn>
+                      <v-btn color="deep-purple" @click="closeDelete">Annuler</v-btn>
                       <v-btn
                         color="error"
                         :disabled="selectedCredit.name === '' || selectedCredit.description === ''"
-                        variant="contained"
+                        variant="elevated"
                         @click="deleteCredit"
                       >Supprimer
                       </v-btn
@@ -278,12 +279,12 @@ export default {
     const page = ref({title: "Crédits" });
     const breadcrumbs = ref([
       {
-        text:"Admin",
+        title:"Admin",
         disable: false,
-        to: "/admin"
+        href: "/admin"
       },
       {
-        text: "Liste des Crédits",
+        title: "Liste des Crédits",
         disable: false,
       }
     ])

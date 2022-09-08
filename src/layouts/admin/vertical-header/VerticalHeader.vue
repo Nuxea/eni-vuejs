@@ -99,17 +99,17 @@ function logOut() {
           rounded="lg"
         >
           <template v-slot:prepend>
-            <v-list-item-avatar start>
+            <v-list-item start>
               <v-btn
                 color="primary"
-                variant="elevated"
+                variant="tonal"
                 icon="mdi-home"
                 elevation="0"
                 size="small"
                 class="mr-3"
               >
               </v-btn>
-            </v-list-item-avatar>
+            </v-list-item>
           </template>
         </v-list-item>
         <v-list-item
@@ -120,24 +120,24 @@ function logOut() {
           rounded="lg"
         >
           <template v-slot:prepend>
-            <v-list-item-avatar start>
+            <v-list-item>
               <v-btn
                 color="error"
-                variant="elevated"
+                variant="tonal"
                 icon="mdi-account"
                 elevation="0"
                 size="small"
                 class="mr-3"
               >
               </v-btn>
-            </v-list-item-avatar>
+            </v-list-item>
           </template>
         </v-list-item>
         <v-btn
           @click="logOut"
-          block
+          block=""
           color="secondary"
-          variant="elevated"
+          variant="tonal"
           class="mt-4 py-4"
           >Déconnexion</v-btn
         >

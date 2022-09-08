@@ -67,7 +67,7 @@ function logOut() {
           rounded="lg"
         >
           <template v-slot:prepend>
-            <v-list-item-avatar start>
+            <v-list-item start>
               <v-btn
                 icon
                 variant="elevated"
@@ -76,7 +76,7 @@ function logOut() {
               >
 
               </v-btn>
-            </v-list-item-avatar>
+            </v-list-item>
           </template>
         </v-list-item>
         <v-btn block variant="elevated" color="secondary" class="mt-4 py-4"
@@ -92,8 +92,8 @@ function logOut() {
           v-bind="props"
           class="pa-0 px-1"
           elevation="0"
-          color="transparent"
-          plain
+          color="#ffffff"
+          variant="plain"
           :ripple="false"
         >
           <v-avatar size="35">
@@ -113,7 +113,7 @@ function logOut() {
           />
           <div class="ml-4">
             <h4 class="font-weight-medium fs-18">{{ currentUser.username }}</h4>
-            <span v-if="isAdmin()" class="subtitle-2 font-weight-light">{{ currentUser.role }}</span>
+            <span class="subtitle-2 font-weight-light">{{ currentUser.role }}</span>
             <div class="d-flex align-center">
               <vue-feather
                 type="mail"
@@ -121,31 +121,31 @@ function logOut() {
                 class="d-flex grey--text"
               ></vue-feather>
               <span class="subtitle-2 font-weight-light ml-1"
-                >{{ currentUser.email }}</span
+              >{{ currentUser.email }}</span
               >
             </div>
           </div>
         </div>
         <v-list-item
-          v-if="isAdmin()"
+          v-if="isAdmin"
           href="/admin"
           class="pa-3 mb-2"
           title="Dashboard"
-          subtitle="Paramètres site"
+          subtitle="Paramètres du site internet"
           rounded="lg"
         >
           <template v-slot:prepend>
-            <v-list-item-avatar start>
+            <v-list-item start>
               <v-btn
                 color="primary"
-                variant="elevated"
-                icon="mdi-pencil"
+                variant="tonal"
+                icon="mdi-pen"
                 elevation="0"
                 size="small"
                 class="mr-3"
               >
               </v-btn>
-            </v-list-item-avatar>
+            </v-list-item>
           </template>
         </v-list-item>
         <v-list-item
@@ -156,29 +156,30 @@ function logOut() {
           rounded="lg"
         >
           <template v-slot:prepend>
-            <v-list-item-avatar start>
+            <v-list-item>
               <v-btn
                 color="error"
-                variant="elevated"
+                variant="tonal"
                 icon="mdi-account"
                 elevation="0"
                 size="small"
                 class="mr-3"
               >
               </v-btn>
-            </v-list-item-avatar>
+            </v-list-item>
           </template>
         </v-list-item>
         <v-btn
           @click="logOut"
           block=""
           color="secondary"
-          variant="elevated"
+          variant="tonal"
           class="mt-4 py-4"
-          >Déconnexion</v-btn
+        >Déconnexion</v-btn
         >
       </v-list>
     </v-menu>
+
 
     <!-- ---------------------------------------------- -->
     <!-- Visitors -->

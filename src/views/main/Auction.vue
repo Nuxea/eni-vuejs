@@ -25,13 +25,13 @@
               <v-col v-if="currentUser" cols="12" lg="8" md="6" class="text-right">
                 <v-dialog v-model="dialog" persistent>
                   <template v-slot:activator="{ props }">
-                    <v-btn color="primary" v-bind="props" class="ml-auto">
+                    <v-btn color="deep-purple" v-bind="props" class="ml-auto">
                       <v-icon class="mr-2">mdi-cash-100</v-icon>
                       Créer une nouvelle Enchère
                     </v-btn>
                   </template>
                   <v-card>
-                    <v-card-title class="pa-4 bg-secondary">
+                    <v-card-title class="pa-4 bg-deep-purple">
                       <span class="title text-white">Création Enchère</span>
                     </v-card-title>
 
@@ -233,12 +233,12 @@ export default {
     const page = ref({title: "Enchères" });
     const breadcrumbs = ref([
       {
-        text:"Accueil",
+        title:"Accueil",
         disable: false,
-        to: "/home"
+        href: "/home"
       },
       {
-        text: "Liste des Enchères",
+        title: "Liste des Enchères",
         disable: false,
       }
     ]);

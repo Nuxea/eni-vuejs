@@ -15,7 +15,7 @@
           <v-row>
             <v-col
               lg="7"
-              class="bg-primary d-none d-md-flex align-center justify-center"
+              class="bg-deep-purple d-none d-md-flex align-center justify-center"
             >
               <div class="d-none d-sm-block">
                 <div class="d-flex align-center pa-10 v-col-8">
@@ -48,7 +48,7 @@
                 <h2 class="font-weight-bold mt-4 text--darken-2">Se Connecter</h2>
                 <h6 class="text-subtitle-1 mb-7">
                   Vous n'avez pas de compte ?
-                  <v-btn to="/register" variant="plain"
+                  <v-btn to="/register" color="deep-purple" variant="plain"
                   >S'inscrire</v-btn
                   >
                 </h6>
@@ -79,7 +79,7 @@
                     :type="show1 ? 'text' : 'password'"
                     @click:append-inner="show1 = !show1"
                   ></v-text-field>
-                  <v-btn color="primary" @click="handleLogin"
+                  <v-btn color="deep-purple" variant="tonal" @click="handleLogin"
                          :disabled="loading"
                   >Se Connecter</v-btn
                   >

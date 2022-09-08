@@ -24,7 +24,7 @@
                 </h2>
                 <h6 class="text-subtitle-1 text-grey-darken-1">
                   Vous avez déjà un compte ?
-                  <v-btn to="/login" variant="plain"
+                  <v-btn to="/login" color="deep-purple" variant="plain"
                     >Se Connecter</v-btn
                   >
                 </h6>
@@ -64,7 +64,7 @@
                     :type="show1 ? 'text' : 'password'"
                     @click:append-inner="show1 = !show1"
                   ></v-text-field>
-                  <v-btn color="primary" @click="handleRegister"
+                  <v-btn color="deep-purple" variant="tonal" @click="handleRegister"
                          :disabled="loading"
                   >S'inscrire</v-btn
                   >
@@ -74,7 +74,7 @@
             </v-col>
             <v-col
               lg="7"
-              class="bg-primary d-none d-md-flex align-center justify-center"
+              class="bg-deep-purple d-none d-md-flex align-center justify-center"
             >
               <div class="d-none d-sm-block">
                 <div class="d-flex align-center pa-10">

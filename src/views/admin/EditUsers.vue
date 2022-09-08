@@ -20,13 +20,13 @@
             <v-col cols="12" lg="8" md="6" class="text-right">
               <v-dialog v-model="dialog" persistent>
                 <template v-slot:activator="{ props }">
-                  <v-btn color="primary" v-bind="props" class="ml-auto">
+                  <v-btn color="deep-purple" v-bind="props" class="ml-auto">
                     <v-icon class="mr-2">mdi-account-multiple-plus</v-icon>
                     Nouvel Utilisateur
                   </v-btn>
                 </template>
                 <v-card>
-                  <v-card-title class="pa-4 bg-secondary">
+                  <v-card-title class="pa-4 bg-deep-purple">
                     <span class="title text-white">{{ formTitle }}</span>
                   </v-card-title>
 
@@ -107,9 +107,9 @@
                     <v-spacer></v-spacer>
                     <v-btn color="error" @click="close">Annuler</v-btn>
                     <v-btn
-                      color="secondary"
+                      color="deep-purple"
                       :disabled="selectedUser.username === '' || selectedUser.email === ''"
-                      variant="contained"
+                      variant="elevated"
                       @click="save"
                     >Sauvegarder
                     </v-btn
@@ -172,46 +172,46 @@
               <td>
                 <v-icon
                   small
-                  class="mr-2 text-info cursor-pointer"
+                  class="mr-2 text-deep-purple cursor-pointer"
                   @click="editUser(user)"
                   title="Modifier"
                 >mdi-pencil
                 </v-icon>
-                <v-dialog v-model="deleteDialog" persistent>
-                  <template v-slot:activator="{ props }">
-                    <v-icon
-                      small
-                      class="text-error cursor-pointer"
-                      title="Supprimer"
-                      @click="deleteRequest(user)"
-                    >mdi-delete
-                    </v-icon>
-                  </template>
-                  <v-card>
-                    <v-card-title class="pa-4 bg-secondary">
-                      <span class="title text-white">Supprimer</span>
-                    </v-card-title>
+<!--                <v-dialog v-model="deleteDialog" persistent>-->
+<!--                  <template v-slot:activator="{ props }">-->
+<!--                    <v-icon-->
+<!--                      small-->
+<!--                      class="text-error cursor-pointer"-->
+<!--                      title="Supprimer"-->
+<!--                      @click="deleteRequest(user)"-->
+<!--                    >mdi-delete-->
+<!--                    </v-icon>-->
+<!--                  </template>-->
+<!--                  <v-card>-->
+<!--                    <v-card-title class="pa-4 bg-secondary">-->
+<!--                      <span class="title text-white">Supprimer</span>-->
+<!--                    </v-card-title>-->
 
-                    <v-card-text>
-                      <v-container>
-                        <p>Voulez-vous vraiment supprimer {{selectedUser.username }} ?</p>
-                      </v-container>
-                    </v-card-text>
+<!--                    <v-card-text>-->
+<!--                      <v-container>-->
+<!--                        <p>Voulez-vous vraiment supprimer {{selectedUser.username }} ?</p>-->
+<!--                      </v-container>-->
+<!--                    </v-card-text>-->
 
-                    <v-card-actions class="pa-4">
-                      <v-spacer></v-spacer>
-                      <v-btn color="secondary" @click="closeDelete">Annuler</v-btn>
-                      <v-btn
-                        color="error"
-                        :disabled="selectedUser.username === '' || selectedUser.email === ''"
-                        variant="contained"
-                        @click="deleteUser"
-                      >Supprimer
-                      </v-btn
-                      >
-                    </v-card-actions>
-                  </v-card>
-                </v-dialog>
+<!--                    <v-card-actions class="pa-4">-->
+<!--                      <v-spacer></v-spacer>-->
+<!--                      <v-btn color="secondary" @click="closeDelete">Annuler</v-btn>-->
+<!--                      <v-btn-->
+<!--                        color="error"-->
+<!--                        :disabled="selectedUser.username === '' || selectedUser.email === ''"-->
+<!--                        variant="contained"-->
+<!--                        @click="deleteUser"-->
+<!--                      >Supprimer-->
+<!--                      </v-btn-->
+<!--                      >-->
+<!--                    </v-card-actions>-->
+<!--                  </v-card>-->
+<!--                </v-dialog>-->
               </td>
             </tr>
             </tbody>
@@ -354,12 +354,12 @@ export default {
     const page = ref({title: "Utilisateurs" });
     const breadcrumbs = ref([
       {
-        text:"Admin",
+        title:"Admin",
         disable: false,
-        to: "/admin"
+        href: "/admin"
       },
       {
-        text: "Liste Utilisateur",
+        title: "Liste Utilisateur",
         disable: false,
       }
     ])

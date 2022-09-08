@@ -1,15 +1,18 @@
 <template>
   <v-container fluid class="page-wrapper">
-    <BaseBreadcrumb
-      :title="page.title"
-      :breadcrumbs="breadcrumbs"
-    ></BaseBreadcrumb>
+    <v-card class="pa-5">
+      <BaseBreadcrumb
+        :title="page.title"
+        :breadcrumbs="breadcrumbs"
+      >
+      </BaseBreadcrumb>
+    </v-card>
     <v-row>
       <v-card v-for="(credit, ind) in filteredList" :key="ind" class="mx-auto my-12" max-width="374">
         <v-img
           height="250"
           :src="'src/assets/images/credits/'+ credit.imageUrl +'.jpeg'"
-          cover
+          cover=""
         ></v-img>
 
         <v-card-item>
@@ -27,7 +30,7 @@
         <v-card-actions class="d-flex justify-center">
           <v-btn
             color="deep-purple-lighten-2"
-            text @click="reserve"
+            text
           >
             Ajouter au panier
           </v-btn>
@@ -80,12 +83,12 @@ export default {
     const page = ref({title: "Crédits" });
     const breadcrumbs = ref([
       {
-        text:"Accueil",
+        title:"Accueil",
         disable: false,
-        to: "/"
+        href: "/"
       },
       {
-        text: "Achat de crédit",
+        title: "Achat de crédit",
         disable: false,
       }
     ]);

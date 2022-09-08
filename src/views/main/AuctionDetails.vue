@@ -80,20 +80,20 @@
                                 <v-card-text>
                                   <v-container>
                                     <p v-if="newPrice.price === 1">
-                                      Voulez-vous vraiment enchérir {{auction.name }} de {{ newPrice.price }} crédit ?
+                                      Voulez-vous vraiment enchérir {{ auction.name }} de {{ newPrice.price }} crédit ?
                                     </p>
                                     <p v-if="newPrice.price > 1">
-                                      Voulez-vous vraiment enchérir {{auction.name }} de {{ newPrice.price }} crédits ?
+                                      Voulez-vous vraiment enchérir {{ auction.name }} de {{ newPrice.price }} crédits ?
                                     </p>
                                   </v-container>
                                 </v-card-text>
 
                                 <v-card-actions class="pa-4">
                                   <v-spacer></v-spacer>
-                                  <v-btn color="secondary" @click="close">Annuler</v-btn>
+                                  <v-btn color="error" @click="close">Annuler</v-btn>
                                   <v-btn
-                                    color="error"
-                                    variant="contained"
+                                    color="secondary"
+                                    variant="tonal"
                                     @click="bid"
                                   >
                                     Enchérir
@@ -253,17 +253,13 @@ export default {
         return;
       }
       if (currentUser.credit >= newPrice.value){
-        AuctionService.saveAuction(newPrice.value).then(response => {
+        BidService.saveBid(newPrice.value).then(response => {
+          currentUser.credit.decrement(newPrice.value);
+          auction.value.price.increment(newPrice.value);
           context.emit('saved', response.data);
         }).catch((err) => {
           console.log(err);
         });
-        // BidService.saveBid(newPrice.value).then(response => {
-        //   context.emit('saved', response.data);
-        //   close();
-        // }).catch((err) => {
-        //   console.log(err);
-        // });
       }
 
     }

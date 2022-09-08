@@ -20,12 +20,12 @@ import TheActivityTimeline from "../dashboardComponents/analyticaldash/activity-
 const page = ref({ title: "Modern" });
 const breadcrumbs = ref([
   {
-    text: "Dashboard",
+    title: "Admin",
     disabled: false,
-    to: "#",
+    href: "#",
   },
   {
-    text: "Modern",
+    title: "Dashboard",
     disabled: true,
   },
 ]);
@@ -37,49 +37,49 @@ const breadcrumbs = ref([
     :breadcrumbs="breadcrumbs"
   ></BaseBreadcrumb>
   <v-row>
-    <v-col cols="12" sm="12" lg="5">
-      <CongratulationCard />
-    </v-col>
-    <v-col cols="12" sm="12" lg="7">
-      <v-row>
-        <v-col lg="5">
-          <Purchases />
-        </v-col>
-        <v-col lg="7">
-          <TotalEarnings />
-        </v-col>
-      </v-row>
-    </v-col>
-    <v-col cols="12" sm="12" lg="8">
-      <RevenueUpdates />
-    </v-col>
-    <v-col cols="12" sm="12" lg="4">
-      <MonthlyEarnings />
-      <Customers />
-    </v-col>
-    <v-col cols="12" sm="12" lg="4">
-      <TotalSales />
-    </v-col>
-    <v-col cols="12" sm="12" lg="8">
-      <ProductPerformance />
-    </v-col>
+<!--    <v-col cols="12" sm="12" lg="5">-->
+<!--      <CongratulationCard />-->
+<!--    </v-col>-->
+<!--    <v-col cols="12" sm="12" lg="7">-->
+<!--      <v-row>-->
+<!--        <v-col lg="5">-->
+<!--          <Purchases />-->
+<!--        </v-col>-->
+<!--        <v-col lg="7">-->
+<!--          <TotalEarnings />-->
+<!--        </v-col>-->
+<!--      </v-row>-->
+<!--    </v-col>-->
+<!--    <v-col cols="12" sm="12" lg="8">-->
+<!--      <RevenueUpdates />-->
+<!--    </v-col>-->
+<!--    <v-col cols="12" sm="12" lg="4">-->
+<!--      <MonthlyEarnings />-->
+<!--      <Customers />-->
+<!--    </v-col>-->
+<!--    <v-col cols="12" sm="12" lg="4">-->
+<!--      <TotalSales />-->
+<!--    </v-col>-->
+<!--    <v-col cols="12" sm="12" lg="8">-->
+<!--      <ProductPerformance />-->
+<!--    </v-col>-->
 
-    <v-col cols="12" sm="12" lg="4">
-      <TheProfileCard />
-      <div class="mt-7"></div>
-      <TheMyContacts />
-    </v-col>
-    <v-col cols="12" sm="12" lg="8">
-      <TheActivityTimeline />
-    </v-col>
-    <v-col cols="12" lg="4">
-      <BlogCard />
-    </v-col>
-    <v-col cols="12" lg="4">
-      <WeeklyStats />
-    </v-col>
-    <v-col cols="12" lg="4">
-      <MedicalProBranding />
-    </v-col>
+<!--    <v-col cols="12" sm="12" lg="4">-->
+<!--      <TheProfileCard />-->
+<!--      <div class="mt-7"></div>-->
+<!--      <TheMyContacts />-->
+<!--    </v-col>-->
+<!--    <v-col cols="12" sm="12" lg="8">-->
+<!--      <TheActivityTimeline />-->
+<!--    </v-col>-->
+<!--    <v-col cols="12" lg="4">-->
+<!--      <BlogCard />-->
+<!--    </v-col>-->
+<!--    <v-col cols="12" lg="4">-->
+<!--      <WeeklyStats />-->
+<!--    </v-col>-->
+<!--    <v-col cols="12" lg="4">-->
+<!--      <MedicalProBranding />-->
+<!--    </v-col>-->
   </v-row>
 </template>

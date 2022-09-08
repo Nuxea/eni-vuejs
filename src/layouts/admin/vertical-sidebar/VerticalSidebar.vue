@@ -62,24 +62,24 @@ const { currentUser } = store.getters;
                 class="mb-1"
               >
                 <!---Icon  -->
-                <v-list-item-avatar start class="v-list-item-avatar--start">
+                <v-list-item class="v-list-item-avatar--start">
                   <vue-feather
                     :type="item.icon"
                     class="feather-sm"
                   ></vue-feather>
-                </v-list-item-avatar>
+                </v-list-item>
                 <!---Title  -->
                 <v-list-item-title
                   v-text="item.title"
                   class="mr-auto"
                 ></v-list-item-title>
                 <template v-slot:append>
-                  <v-list-item-avatar end class="v-list-item-avatar--end">
+                  <v-list-item class="v-list-item-avatar--end">
                     <vue-feather
                       type="chevron-down"
                       class="feather-sm"
                     ></vue-feather>
-                  </v-list-item-avatar>
+                  </v-list-item>
                 </template>
               </v-list-item>
             </template>
@@ -94,9 +94,9 @@ const { currentUser } = store.getters;
               rounded="lg"
               class="first-level-item mb-1"
             >
-              <v-list-item-avatar start class="v-list-item-avatar--start">
+              <v-list-item start class="v-list-item-avatar--start">
                 <vue-feather type="disc" class="feather-sm"></vue-feather>
-              </v-list-item-avatar>
+              </v-list-item>
               <v-list-item-title v-text="subitem.title"></v-list-item-title>
             </v-list-item>
           </v-list-group>
@@ -105,13 +105,13 @@ const { currentUser } = store.getters;
           <!-- ---------------------------------------------- -->
           <v-list-item v-else :key="i" :to="item.to" rounded="lg" class="mb-1">
 
-            <div class="d-flex">
-              <v-list-item-avatar start class="v-list-item-avatar--start">
+            <div class="d-flex align-center">
+              <v-list-item class="v-list-item-avatar--start">
                 <vue-feather
                   :type="item.icon"
                   class="feather-sm v-icon v-icon--size-default"
                 ></vue-feather>
-              </v-list-item-avatar>
+              </v-list-item>
               <v-list-item-title class="ml-5" v-text="item.title"></v-list-item-title>
             </div>
           </v-list-item>
